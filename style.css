@@ -1,0 +1,395 @@
+body {
+    font-family: Font;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+a {
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 5px 10px;
+    position: relative; /* IMPORTANT */
+}
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 5px 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#lang-icon {
+    max-width: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    outline: #ffffff solid 2px;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s ease, transform 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    transform: translateY(-3px);
+    color: #ffffff;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+#start {
+    display: flex;
+    align-items: center;
+}
+
+#Logo {
+    height: 40px;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+button {
+    background: transparent;
+    border: none;
+    font-family: Font;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+@font-face {
+    font-family: Font;
+    src: url('FuturaExtraBold.otf');
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background: #163687;
+    color: whitesmoke;
+    align-items: center;
+    background: linear-gradient(90deg,rgba(22, 54, 135, 1) 0%, rgba(40, 119, 209, 1) 67%, rgba(24, 151, 219, 1) 100%);
+
+}
+
+
+
+
+
+
+
+.lang-container {
+  position: relative;
+  display: inline-block;
+}
+
+#lang-toggle {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+#lang-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 150px;
+  z-index: 99999999999999999999999999999999999999999999999999999999999999999999999999999999;
+}
+
+.lang-option {
+  padding: 10px;
+  cursor: pointer;
+  color: black;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  transition: 0.5s;
+}
+
+.lang-option:hover {
+  background: #dedede;
+  border-radius: 5px;
+  transition-duration: 0.5s;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+    color: rgb(61, 57, 57);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    background: linear-gradient(90deg,rgba(22, 54, 135, 1) 0%, rgba(40, 119, 209, 1) 67%, rgba(24, 151, 219, 1) 100%);
+
+}
+
+.box1 {
+    background: #e6e5e5;
+    color: rgb(81, 81, 81);
+    margin: 20px;
+    padding: 20px;
+    padding-top: 5px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.main-image {
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+#main-image2 {
+    max-width: 200px;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  color: rgb(81, 81, 81);
+}
+
+.paragraph {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rubrik {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: rgb(81, 81, 81);
+}
+
+.historia-img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 15px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+#extra {
+  border-radius: 7px;
+}
+
+#copyright {
+    color:black;
+    
+}
+
+.p {
+  max-width: 800px;
+}
+
+#psyonix {
+  max-width: 400px;
+  height: auto;
+}   
+
+#rlcs {
+  max-width: 200px;
+  height: auto;
+  padding-left: 95px;
+}
+
+#ssl {
+  max-width: 200px;
+  height: auto;
+  padding-right: 95px;
+}
+
+.scroll-container {
+  width: 90%;
+  display: flex;
+  overflow-x: auto;   /* gör att man kan scrolla i sidled */
+  gap: 10px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  scroll-behavior: smooth;
+  align-items: center;
+}
+
+.Full {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#card1 {
+  padding-left: 0px
+}
+
+#lastcard {
+  padding-right: 0px;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+#card1 {
+  margin-left: 20px
+}
+
+#lastcard {
+  margin-right: 30px
+}
+
+.card {
+    min-width: 200px;   
+    height: 400px;
+    background: rgb(219, 219, 219);
+    flex-shrink: 0;     
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.295);
+}
+
+.card img {
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card h2 {
+    margin: 0px ;
+    color: rgb(0, 0, 0);
+}
+
+.card p {
+  font-size: 20px;
+  max-width: 300px;
+}
+
+.left {
+    left: 10px;
+    padding-left: 10px;
+}
+
+.right {
+  right: 10px;
+    padding-right: 10px;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;   /* gör pilen stor */
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100000000000000000000;
+    border-radius: 10px;;
+}
+
+.slider-wrapper {
+    position: relative;
+}
+
+
+
+.box {
+  background: #e6e5e5;
+  color: rgb(81, 81, 81);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin: 10px;
+
+}   
+.box10 {
+  margin: 10px;
+  background: #e6e5e5;
+  color: rgb(81, 81, 81);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}   
+
+.carbox{
+  background: #e6e5e5;
+  color: rgb(81, 81, 81);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 300px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#rad1 {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+#rad2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.carbox img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+#Dominus {
+  max-width: 300px;
+}
+#Octane {
+  max-width: 400px;
+}
+#Fennec {
+  max-width: 550px;
+}
+
+#fennec img {
+  width: 550px;
+  height: auto;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#BattleBus img {
+  width: 200px;
+}
+
+#MarioNSR img {
+  width: 300px;
+}

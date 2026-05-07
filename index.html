@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket League™</title>
+    <link rel="icon" href="bilder/RLLogo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div id="start">        
+            <a href="index.html"><img src="bilder/RLLogo.png" id="Logo" alt="Rocket league logga"></a>
+            <a href="index.html">ROCKET LEAGUE</a>
+        </div>
+        <a class="navigation" data-key="bilar" href="bilar.html">BILAR</a>
+        <a class="navigation" data-key="historia" href="historia.html">HISTORIA</a>
+        <a class="navigation" data-key="influencers" href="influencers.html">INFLUENCERS</a>
+        <div class="lang-container">
+            <button id="lang-toggle"><img id="lang-icon" src="Bilder/lang.png" alt="Språk"></button>
+            <div id="lang-menu" class="hidden">
+                <div class="lang-option" data-lang="en">English</div>
+                <div class="lang-option" data-lang="sv">Svenska</div>
+            </div>
+        </div>
+      </nav>
+
+    <main>
+      <div class="box1">
+        <h1>Rocket League™</h1>
+        <div class="paragraph">
+          <img class="main-image" src="Bilder/WhatIsRocketLeague.jpg" alt="What is Rocket League?">
+          <div>
+            <h3 data-key="intr">Vad är Rocket League?</h3>
+            <p  data-key="introduktion">Rocket League är ett fordonsfotbollsvideospel utvecklat och publicerat av Psyonix. Spelet släpptes 2015 för Microsoft Windows och PlayStation 4, med portar för Xbox One och Nintendo Switch under de följande åren. I Rocket League kontrollerar spelarna raketdrivna bilar för att slå en boll in i motståndarlagets mål för att göra poäng, och kombinerar element av fotboll med höghastighetsfordon.</p>
+          </div>
+        </div>
+        <div class="paragraph">
+          <div>
+            <h3 data-key="intr2">Varför är Rocket League så populärt?</h3>
+            <p  data-key="introduktion2">Rocket League har fått kritikerros för sitt unika spelupplägg, fysikbaserade spelmekanik och tävlingsinriktade flerspelarlägen. Spelet har en stor och aktiv spelarbas, med regelbundna uppdateringar och nytt innehåll som läggs till av utvecklarna. Det har också blivit en populär e-sport, med professionella spelare och lag som tävlar i turneringar runt om i världen.</p>
+          </div>
+          <img id="main-image2" src="Bilder/Rlcs.png" alt="Rocket League Championship Series">
+        </div>
+
+        <div class="paragraph">
+          <img class="main-image" src="Bilder/WhatDoPeopleThink.jpg" alt="What do people think about Rocket League?">
+          <div>
+            <h3 data-key="intr3">Vad tycker folk om Rocket League?</h3>
+            <p  data-key="introduktion3">Sammantaget är Rocket League ett mycket underhållande och beroendeframkallande spel som har fått en hängiven fanskara och fortsätter att vara en viktig aktör i spelindustrin.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+    <footer>
+        <p id="copyright">Copyright © 2026 Rocket League™. All rights reserved.</p>
+    </footer>
+
+
+
+    <script>
+        const translations = {
+  sv: {
+    bilar: "BILAR",
+    historia: "HISTORIA",
+    influencers: "INFLUENCERS",
+    språk: "Språk",
+    intr: "Vad är Rocket League?",
+    introduktion: "Rocket League är ett fordonsfotbollsvideospel utvecklat och publicerat av Psyonix. Spelet släpptes 2015 för Microsoft Windows och PlayStation 4, med portar för Xbox One och Nintendo Switch under de följande åren. I Rocket League kontrollerar spelarna raketdrivna bilar för att slå en boll in i motståndarlagets mål för att göra poäng, och kombinerar element av fotboll med höghastighetsfordon.",
+    intr2: "Varför är Rocket League så populärt?",
+    introduktion2: "Rocket League har fått kritikerros för sitt unika spelupplägg, fysikbaserade spelmekanik och tävlingsinriktade flerspelarlägen. Spelet har en stor och aktiv spelarbas, med regelbundna uppdateringar och nytt innehåll som läggs till av utvecklarna. Det har också blivit en populär e-sport, med professionella spelare och lag som tävlar i turneringar runt om i världen.",
+    intr3: "Vad tycker folk om Rocket League?",
+    introduktion3: "Sammantaget är Rocket League ett mycket underhållande och beroendeframkallande spel som har fått en hängiven fanskara och fortsätter att vara en viktig aktör i spelindustrin."
+  },
+  en: {
+    bilar: "CARS",
+    historia: "HISTORY",
+    influencers: "INFLUENCERS",
+    språk: "Language",
+    intr: "What is Rocket League?",
+    introduktion: "Rocket League is a vehicular soccer video game developed and published by Psyonix. The game was released in 2015 for Microsoft Windows and PlayStation 4, with ports for Xbox One and Nintendo Switch following in subsequent years. In Rocket League, players control rocket-powered cars to hit a ball into the opposing team's goal to score points, combining elements of soccer with high-speed vehicular action.",
+    intr2: "Why is Rocket League so popular?",
+    introduktion2: "Rocket League has received critical acclaim for its unique gameplay, physics-based mechanics, and competitive multiplayer modes. The game has a large and active player base, with regular updates and new content being added by the developers. It has also become a popular esport, with professional players and teams competing in tournaments around the world.",
+    intr3: "What do people think about Rocket League?",
+    introduktion3: "Overall, Rocket League is a highly enjoyable and addictive game that has garnered a dedicated fanbase and continues to be a major player in the gaming industry."
+  }
+};
+
+let currentLang = localStorage.getItem('language') || 'sv';
+
+function updateLanguage() {
+    document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        if (translations[currentLang][key]) {
+            el.textContent = translations[currentLang][key];
+        }
+    });
+}
+
+const toggleBtn = document.getElementById("lang-toggle");
+const menu = document.getElementById("lang-menu");
+
+// Apply initial language
+updateLanguage();
+
+// Open/close popup
+toggleBtn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
+
+// Change language
+document.querySelectorAll(".lang-option").forEach(option => {
+  option.addEventListener("click", () => {
+    const selectedLang = option.getAttribute("data-lang");
+    currentLang = selectedLang;
+    localStorage.setItem('language', currentLang);
+
+    updateLanguage();
+
+    // Close menu
+    menu.classList.add("hidden");
+  });
+});
+
+// Optional: close menu if clicking outside
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".lang-container")) {
+    menu.classList.add("hidden");
+  }
+});
+
+
+    </script>
+
+
+</body>
+</html>

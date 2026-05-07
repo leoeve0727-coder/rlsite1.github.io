@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket League™</title>
+    <link rel="icon" href="bilder/RLLogo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+      <div id="start">        
+        <a href="index.html"><img src="bilder/RLLogo.png" id="Logo" alt="Rocket league logga"></a>
+        <a href="index.html">ROCKET LEAGUE</a>
+      </div>
+      <a class="navigation" data-key="bilar" href="bilar.html">BILAR</a>
+      <a class="navigation" data-key="historia" href="historia.html">HISTORIA</a>
+      <a class="navigation" data-key="influencers" href="influencers.html">INFLUENCERS</a>
+      <div class="lang-container">
+        <button id="lang-toggle"><img id="lang-icon" src="Bilder/lang.png" alt="Språk"></button>
+        <div id="lang-menu" class="hidden">
+          <div class="lang-option" data-lang="en">English</div>
+          <div class="lang-option" data-lang="sv">Svenska</div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      
+      <div class="slider-wrapper">
+        <button class="arrow left" id="scroll-left">❮</button>
+        <div class="Full">
+          <div class="scroll-container" id="slider">
+            <div id="card1" class="card">
+              <img src="Bilder/Musty.jpg" alt="Musty">
+              <h2>Musty</h2>
+              <p>Musty is a well know rocket league player and content creator.</p>
+            </div>
+            <div class="card">
+              <img src="Bilder/Lethamyr.webp" alt="Lethamyr">
+              <h2>Lethamyr</h2>
+              <p>Lethamyr is a popular Rocket League streamer and content creator.</p>
+            </div>
+            <div class="card">
+              <img src="Bilder/Jynxzi.webp" alt="Jynxzi">
+              <h2>Jynxzi</h2>
+              <p>Jynxzi is a well-known Rocket League streamer and content creator.</p>
+            </div>
+            <div class="card">
+              <img src="Bilder/ZEN.png" alt="Zen logo">
+              <h2>ZEN</h2>
+              <p>ZEN is the current world champion of rocket league and is considered the best player.</p>
+            </div>
+            <div class="card">
+              <img src="Bilder/Jstn.jpg" alt="Jstn">
+              <h2>Jstn</h2>
+              <p>Justin is one of the most iconic players having the most known rocket league clip OAT.</p>
+            </div>
+            <div class="card">
+              <img src="Bilder/icon.jpg" alt="C-Bell">
+              <h2>C-Bell</h2>
+              <p>C-Bell is a know content creator famous for his challanges.</p>
+            </div>
+            <div class="card">
+              <img src="Bilder/RLFX.jpg" alt="RLFX">
+              <h2>RLFX</h2>
+              <p>Rocket League FX is known for their montages of insane saves or shots in-game</p>
+            </div>
+            <div id="lastcard" class="card">
+              <img src="Bilder/Squishy.png" alt="Squishy">
+              <h2>Squishy</h2>
+              <p>Squishy is a popular Rocket League streamer and content creator.</p>
+            </div>
+          </div>
+        </div>
+        <button class="arrow right" id="scroll-right">❯</button>
+      </div>
+    </main>
+
+    <footer>
+        <p id="copyright">Copyright © 2026 Rocket League™. All rights reserved.</p>
+    </footer>
+
+
+
+    <script>
+        const translations = {
+  sv: {
+    bilar: "BILAR",
+    historia: "HISTORIA",
+    influencers: "INFLUENCERS",
+    språk: "Språk",
+  },
+  en: {
+    bilar: "CARS",
+    historia: "HISTORY",
+    influencers: "INFLUENCERS",
+    språk: "Language",
+  }
+};
+
+let currentLang = localStorage.getItem('language') || 'sv';
+
+function updateLanguage() {
+    document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        if (translations[currentLang][key]) {
+            el.textContent = translations[currentLang][key];
+        }
+    });
+}
+
+const toggleBtn = document.getElementById("lang-toggle");
+const menu = document.getElementById("lang-menu");
+
+// Apply initial language
+updateLanguage();
+
+// Open/close popup
+toggleBtn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
+
+// Change language
+document.querySelectorAll(".lang-option").forEach(option => {
+  option.addEventListener("click", () => {
+    const selectedLang = option.getAttribute("data-lang");
+    currentLang = selectedLang;
+    localStorage.setItem('language', currentLang);
+
+    updateLanguage();
+
+    // Close menu
+    menu.classList.add("hidden");
+  });
+});
+
+// Optional: close menu if clicking outside
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".lang-container")) {
+    menu.classList.add("hidden");
+  }
+});
+
+
+
+const slider = document.getElementById("slider");
+const leftButton = document.getElementById("scroll-left");
+const rightButton = document.getElementById("scroll-right");
+
+function slideLeft() {
+    slider.scrollLeft = Math.max(0, slider.scrollLeft - 200);
+}
+
+function slideRight() {
+    slider.scrollLeft = slider.scrollLeft + 200;
+}
+
+leftButton.addEventListener("click", slideLeft);
+rightButton.addEventListener("click", slideRight);
+    </script>
+
+
+</body>
+</html>

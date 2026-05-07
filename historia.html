@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket League™</title>
+    <link rel="icon" href="bilder/RLLogo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div id="start">        
+            <a href="index.html"><img src="bilder/RLLogo.png" id="Logo" alt="Rocket league logga"></a>
+            <a href="index.html">ROCKET LEAGUE</a>
+        </div>
+        <a class="navigation" data-key="bilar" href="bilar.html">BILAR</a>
+        <a class="navigation" data-key="historia" href="histora.html">HISTORIA</a>
+        <a class="navigation" data-key="influencers" href="influencers.html">INFLUENCERS</a>
+        <div class="lang-container">
+            <button id="lang-toggle"><img id="lang-icon" src="Bilder/lang.png" alt="Språk"></button>
+            <div id="lang-menu" class="hidden">
+                <div class="lang-option" data-lang="en">English</div>
+                <div class="lang-option" data-lang="sv">Svenska</div>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+      <div class="box1">
+        <div class="rubrik">
+          <h3 data-key="rubrik">Rocket League – historia</h3>
+        </div>
+        <div class="paragraph">
+          <p data-key="introduktion">Rocket League är ett unikt spel som kombinerar fotboll med raketdrivna bilar. Spelet utvecklades av Psyonix och släpptes den 7 juli 2015 till PC och PlayStation 4, innan det senare kom till fler plattformar. Idén bakom spelet är enkel men innovativ: spelare styr bilar som ska skjuta en boll i motståndarens mål, vilket skapar en snabb, actionfylld spelupplevelse som är lätt att lära sig men svår att bemästra.</p>
+          <img src="Bilder/release.jpg" alt="Rocket League release" class="historia-img">
+        </div>
+        <div class="paragraph">
+          <img src="Bilder/Extramodes.jpg" alt="Rocket League extra modes" class="historia-img" id="extra">
+          <p class="p" data-key="introduktion2">Rocket League blev snabbt en enorm framgång efter lanseringen. Tack vare att det var gratis via PlayStation Plus vid release fick det miljontals spelare på kort tid. Spelet har sedan dess fått många uppdateringar, inklusive nya spellägen som basket (Hoops), hockey (Snow Day) och kaoslägen som Rumble, samt kosmetiska föremål och säsongssystem. År 2020 blev spelet dessutom free-to-play, vilket ytterligare ökade spelarbasen.</p>
+        </div>
+        <div class="paragraph">
+          <p class="p" data-key="företag">Bakom spelet står alltså Psyonix, ett amerikanskt spelutvecklingsföretag som grundades i början av 2000-talet. Studion arbetade länge med andra projekt innan Rocket League slog igenom och förändrade företagets framtid. Framgången blev så stor att företaget 2019 köptes upp av Epic Games, vilket ledde till ännu större satsningar på spelet och dess esport.</p>
+          <img src="Bilder/Psyonix.png" alt="Psyonix logo" id="psyonix">
+        </div>
+        <div class="paragraph">
+          <img src="Bilder/Rlcs.png" alt="Rocket League Championship Series" id="rlcs">
+          <p class="p" data-key="esport">En viktig del av Rocket Leagues framgång är dess esport-scen. Redan 2016 startade Rocket League Championship Series (RLCS), som snabbt växte till en av de största tävlingarna inom spelet. Turneringar har hållits världen över med stora prispotter och hundratusentals tittare online. Esporten har fortsatt att utvecklas med nya format, regionala ligor och världsmästerskap som lockar både spelare och publik globalt.</p>
+        </div>
+        <div class="paragraph">
+          <p class="p" data-key="slut">Idag räknas Rocket League som ett av de mest populära och unika sportspelen i världen. Kombinationen av enkel spelidé, hög skicklighetstak och stark esport-scen har gjort att spelet fortsätter vara relevant många år efter sin lansering.</p>
+          <img src="Bilder/SSL.png" alt="Supersonic Legend" id="ssl">
+        </div>
+      </div>
+    </main>
+
+    <footer>
+        <p>Copyright © 2026 Rocket League™. All rights reserved.</p>
+    </footer>
+
+
+
+    <script>
+        const translations = {
+  sv: {
+    bilar: "BILAR",
+    historia: "HISTORIA",
+    influencers: "INFLUENCERS",
+    språk: "Språk",
+    rubrik: "Rocket League – historia",
+    introduktion: "Rocket League är ett unikt spel som kombinerar fotboll med raketdrivna bilar. Spelet utvecklades av Psyonix och släpptes den 7 juli 2015 till PC och PlayStation 4, innan det senare kom till fler plattformar. Idén bakom spelet är enkel men innovativ: spelare styr bilar som ska skjuta en boll i motståndarens mål, vilket skapar en snabb, actionfylld spelupplevelse som är lätt att lära sig men svår att bemästra.",
+    introduktion2: "Rocket League blev snabbt en enorm framgång efter lanseringen. Tack vare att det var gratis via PlayStation Plus vid release fick det miljontals spelare på kort tid. Spelet har sedan dess fått många uppdateringar, inklusive nya spellägen som basket (Hoops), hockey (Snow Day) och kaoslägen som Rumble, samt kosmetiska föremål och säsongssystem. År 2020 blev spelet dessutom free-to-play, vilket ytterligare ökade spelarbasen.",
+    företag: "Bakom spelet står alltså Psyonix, ett amerikanskt spelutvecklingsföretag som grundades i början av 2000-talet. Studion arbetade länge med andra projekt innan Rocket League slog igenom och förändrade företagets framtid. Framgången blev så stor att företaget 2019 köptes upp av Epic Games, vilket ledde till ännu större satsningar på spelet och dess esport.",    
+    esport: "Ett nyckelmoment i Rocket Leaguess framgång är dess esportscen. Rocket League Championship Series (RLCS) började 2016 och växte snabbt till en av de största tävlingarna i spelet. Turneringar har hållits runt om i världen med stora prispooler och hundratusentals tittare online. Esports har fortsatt utvecklas med nya format, regionala ligan och världsmästerskap som drar både spelare och publik globalt.",
+    slut: "Idag räknas Rocket League som ett av de mest populära och unika sportspelen i världen. Kombinationen av enkel spelidé, hög skicklighetstak och stark esport-scen har gjort att spelet fortsätter vara relevant många år efter sin lansering."
+
+  },
+  en: {
+    bilar: "CARS",
+    historia: "HISTORY",
+    influencers: "INFLUENCERS",
+    språk: "Language",
+    rubrik: "Rocket League – History",
+    introduktion: "Rocket League is a unique game that combines soccer with rocket-powered cars. The game was developed by Psyonix and released on July 7, 2015 for PC and PlayStation 4, before later coming to other platforms. The idea behind the game is simple but innovative: players control cars that must shoot a ball into the opponent's goal, creating a fast-paced, action-packed gaming experience that is easy to learn but difficult to master.",
+    introduktion2: "Rocket League quickly became a huge success upon its release. Thanks to being free through PlayStation Plus upon release, it quickly gained millions of players. The game has since received numerous updates, including new game modes such as basketball (Hoops), hockey (Snow Day), and mayhem modes such as Rumble, as well as cosmetic items and a seasonal system. In 2020, the game also became free-to-play, further increasing its player base.",
+    företag: "The game is created by Psyonix, an American game development company founded in the early 2000s. The studio worked on other projects for a long time before Rocket League took off and changed the future of the company. The success was so great that the company was acquired by Epic Games in 2019, which led to even greater investments in the game and its esports.",
+    esport: "A key part of Rocket League's success is its esports scene. The Rocket League Championship Series (RLCS) began in 2016, and quickly grew into one of the largest competitions in the game. Tournaments have been held around the world with large prize pools and hundreds of thousands of viewers online. Esports has continued to evolve with new formats, regional leagues, and world championships attracting both players and audiences globally.",
+    slut: "Today, Rocket League is considered one of the most popular and unique sports games in the world. The combination of a simple gameplay concept, high skill ceiling, and strong esports scene has meant that the game remains relevant many years after its launch."
+  }
+};
+
+let currentLang = localStorage.getItem('language') || 'sv';
+
+function updateLanguage() {
+    document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        if (translations[currentLang][key]) {
+            el.textContent = translations[currentLang][key];
+        }
+    });
+}
+
+const toggleBtn = document.getElementById("lang-toggle");
+const menu = document.getElementById("lang-menu");
+
+// Apply initial language
+updateLanguage();
+
+// Open/close popup
+toggleBtn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
+
+// Change language
+document.querySelectorAll(".lang-option").forEach(option => {
+  option.addEventListener("click", () => {
+    const selectedLang = option.getAttribute("data-lang");
+    currentLang = selectedLang;
+    localStorage.setItem('language', currentLang);
+
+    updateLanguage();
+
+    // Close menu
+    menu.classList.add("hidden");
+  });
+});
+
+// Optional: close menu if clicking outside
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".lang-container")) {
+    menu.classList.add("hidden");
+  }
+});
+
+
+    </script>
+
+
+</body>
+</html>

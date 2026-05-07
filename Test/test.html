@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div class="lang-container">
+        <button id="lang-toggle" data-key="language">🌐 Language</button>
+        <div id="lang-menu" class="hidden">
+            <div class="lang-option" data-lang="en">English</div>
+            <div class="lang-option" data-lang="sv">Svenska</div>
+        </div>
+    </div>
+
+    <h1 data-key="title">Hello</h1>
+    <p data-key="description">Welcome to my website</p>
+
+    <script>
+        const translations = {
+  en: {
+    title: "Hello",
+    description: "Welcome to my website",
+    language: "Language"
+  },
+  sv: {
+    title: "Hej",
+    description: "Välkommen till min webbplats",
+    language: "Språk"
+  }
+};
+
+let currentLang = localStorage.getItem('language') || 'en';
+
+function updateLanguage() {
+    document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        if (translations[currentLang][key]) {
+            el.textContent = translations[currentLang][key];
+        }
+    });
+}
+
+const toggleBtn = document.getElementById("lang-toggle");
+const menu = document.getElementById("lang-menu");
+
+// Apply initial language
+updateLanguage();
+
+// Open/close popup
+toggleBtn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
+
+// Change language
+document.querySelectorAll(".lang-option").forEach(option => {
+  option.addEventListener("click", () => {
+    const selectedLang = option.getAttribute("data-lang");
+    currentLang = selectedLang;
+    localStorage.setItem('language', currentLang);
+
+    updateLanguage();
+
+    // Close menu
+    menu.classList.add("hidden");
+  });
+});
+
+// Optional: close menu if clicking outside
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".lang-container")) {
+    menu.classList.add("hidden");
+  }
+});
+    </script>
+
+
+</body>
+</html>
